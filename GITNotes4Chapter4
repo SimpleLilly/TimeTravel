@@ -16,3 +16,4 @@ GIT Initialization.
 	git rev-parse --show-toplevel
 	git rev-parse --show-prefix
 	git rev-parse --show-cdup
+	git log --pretty=fuller
