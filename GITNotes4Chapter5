@@ -5,3 +5,5 @@ GIT Stage
 	git log --pretty=oneline
 	git status -s
 Pause ...
+
+5.2
