@@ -1,0 +1,6 @@
+Write down some notes for chapter5:
+GIT Stage
+============================================
+5.1	git log --stat
+	git log --pretty=oneline
+	git status -s
