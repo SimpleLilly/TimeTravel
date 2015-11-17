@@ -7,3 +7,6 @@ GIT Stage
 Pause ...
 
 5.2
+Pause2 ...
+	find . -path ./.git -prune -o -type f -printf "%-20p\t%s\n"
+	git ls-files -s
