@@ -4,7 +4,7 @@ GIT Commands:
 ==================================
 Update the index just where it already has an entry matching <pathspec>. This removes as well as modifies index entries to match the working tree, but adds no new files.
 
-If no <pathspec> is given,:q the current version of Git defaults to :wq!
+If no <pathspec> is given,:q the current version of Git defaults to :
 "."; in other words, update all tracked files in the current directory and its subdirectories. This default will change in a future version of Git, hence the form without <pathspec> should not be used
 
 ===================================
