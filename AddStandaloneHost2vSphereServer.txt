@@ -1,0 +1,9 @@
+You can add standalone hosts to a vSphere server by using the Add-VMHost cmdlet. After adding the hosts, you
+will be able to manage them through the vSphere server.
+Prerequisites
+Connect to a vSphere server.
+Procedure
+1 View all hosts on the vSphere server that you have established a connection with.
+Get-VMHost
+2 Add the Host standalone host.
+Add-VMHost -Name Host -Location (Get-Datacenter DC) -User root -Password pass

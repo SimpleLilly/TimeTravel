@@ -1,0 +1,19 @@
+You can use PowerCLI to create virtual machines templates and convert them to virtual machines on vSphere.
+NOTE A virtual machine template is a reusable image created from a virtual machine. The template, as a
+derivative of the source virtual machine, includes virtual hardware components, an installed guest operating
+system, and software applications.
+Prerequisites
+Connect to a vSphere server.
+Procedure
+1 Create a template from the VM1 virtual machine.
+New-Template -VM VM1 -Name VM1Template -Location (Get-Datacenter DC )
+2 Convert the VM1Template template for use by a virtual machine named VM3.
+Get-Template VM1Template | Set-Template -ToVM -Name VM3
+3 Create a template from the VM2 virtual machine.
+New-Template -VM VM2 -Name VM2Template -Location (Get-Datacenter DC )
+4 Convert the VM2Template template to a virtual machine named VM4.
+Get-Template VM2Template | Set-Template -ToVM -Name VM4
+5 Convert the VM4 virtual machine to a template.
+Set-VM 每VM VM4 每ToTemplate 每Name ※VM4Template§
+6 Create a template called VM3Template by cloning VM2Template.
+Get-Template VM2Template | New-Template -Name VM3Template 每VMHost $targetVMHost

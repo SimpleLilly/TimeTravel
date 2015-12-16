@@ -1,0 +1,19 @@
+You can use a specification provided in an XML file to automate the creation of virtual machines on vSphere.
+Prerequisites
+Connect to a vSphere server.
+The myVM.xml file must be present with the following content:
+<CreateVM>
+<VM>
+<Name>MyVM1</Name>
+<HDDCapacity>10000</HDDCapacity>
+</VM>
+<VM>
+<Name>MyVM2</Name>
+<HDDCapacity>10000</HDDCapacity>
+</VM>
+</CreateVM>
+Procedure
+1 Read the content of the myVM.xmll file.
+[xml]$s = Get-Content myVM.xml
+2 Create the virtual machines.
+$s.CreateVM.VM | foreach { New-VM -VMHost 192.168.10.11 -Name $_.Name -DiskMB $_.HDDCapacity}

@@ -1,0 +1,18 @@
+You can use the Snapshot parameter of Get-VM to take a snapshot of virtual machines and then revert the virtual
+machines' states back to the snapshot.
+NOTE A snapshot captures the memory, disk, and settings state of a virtual machine at a particular moment.
+When you revert to a snapshot, you return all these items to the state they were in at the time you took that
+snapshot.
+Prerequisites
+Connect to a vSphere server.
+Chapter 4 Sample Scripts for Managing vSphere with PowerCLI
+VMware, Inc. 29
+Procedure
+1 Take a snapshot of all virtual machines in the MyRP01 resource pool.
+Get-ResourcePool MyRP01 | Get-VM | New-Snapshot -Name InitialSnapshot
+The Location parameter takes arguments of the VIContainer type, on which Cluster, Datacenter,
+Folder, ResourcePool, and VMHost object types are based. Therefore, the Location parameter can use
+arguments of all these types.
+2 Revert all virtual machines in the MyRP01 resource pool to the InitialSnapshot snapshot.
+$VMs = Get-ResourcePool MyRP01 | Get-VM
+foreach( $vm in $VMs ) { Set-VM -VM $vm -Snapshot ¨CSnapshot InitialSnapshot }

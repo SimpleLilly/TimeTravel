@@ -1,0 +1,18 @@
+You can use the Set-VMResourceConfiguration cmdlet to modify the resource configuration properties of a
+virtual machine, including memory, CPU shares, and other settings.
+Prerequisites
+Connect to a vSphere server.
+Procedure
+1 View the resource configuration for the VM1 virtual machine.
+Get-VMResourceConfiguration -VM VM1
+2 View the disk share of the VM1 virtual machine.
+Get-VMResourceConfiguration -VM VM1 | Format-Custom -Property DiskResourceConfiguration
+3 Change the memory share of the VM1 virtual machine to low.
+Get-VM VM1 | Get-VMResourceConfiguration | Set-VMResourceConfiguration -MemSharesLevel low
+4 Change the CPU shares of the VM1 virtual machine to high.
+Get-VM VM1 | Get-VMResourceConfiguration | Set-VMResourceConfiguration -CpuSharesLevel high
+5 Change the disk share of the VM1 virtual machine to 100.
+$vm1 = Get-VM VM1
+$vm1disk = Get-HardDisk $vm1
+Get-VMResourceConfiguration $vm1 | Set-VMResourceConfiguration -Disk $vm1disk -
+DiskSharesLevel custom -NumDiskShares 100

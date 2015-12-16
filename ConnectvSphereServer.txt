@@ -1,0 +1,11 @@
+To run PowerCLI cmdlets on vSphere and perform administration or monitoring tasks, first establish a
+
+connection to an ESX instance or a vCenter Server.
+Prerequisites
+If you use a proxy server for the connection, verify that it is configured properly, so that the connection is kept
+alive long enough for long PowerCLI tasks to complete running.
+NOTE You can remove a proxy by running Set-PowerCLIConfiguration -ProxyPolicy NoProxy.
+
+Procedure
+Run Connect-VIServer with the server name and valid credentials.
+Connect-VIServer -Server esx3.example.com -Protocol http -User admin -Password pass
