@@ -13,4 +13,7 @@ If no <pathspec> is given,:q the current version of Git defaults to :
 GITHandbook.txt added to index but haven't been push to remote server.
 This command will delete it from locao index.
 
-
+====================================
+3.  git alias
+====================================
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
