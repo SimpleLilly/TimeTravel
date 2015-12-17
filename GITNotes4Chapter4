@@ -1,0 +1,20 @@
+Write down some notes for chapter 4.
+GIT Initialization.
+====================================
+4.1  Create repo and first commit.
+	git --version
+	git version 1.9.0.msysgit.0
+	git config user.name "SimpleLilly"
+	git config user.email "calypsochenlili@126.com"
+	git config --system alias.st status
+	git config --system alias.ci commit
+	git config --system alias.co checkout
+	git config --system alias.br branch
+	git config --global color.ui true
+	git grep "matchingStr"
+	git rev-parse --git-dir	#Show your local repo path.
+	git rev-parse --show-toplevel
+	git rev-parse --show-prefix
+	git rev-parse --show-cdup
+	git log --pretty=fuller
+	git clone TimeTravel TimeTravelGITInitialization
