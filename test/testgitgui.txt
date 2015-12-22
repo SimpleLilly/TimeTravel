@@ -1,1 +1,0 @@
-Use git gui command can show a new window.
